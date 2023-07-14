@@ -56,7 +56,7 @@ export default function RootLayout({
 }
 ```
 
-### use NextLink from "next-app-nprogress-navigation" instead of 'next/link'
+### use `<NextLink />` from "next-app-nprogress-navigation" instead of `<Link />` from 'next/link'
 
 ```jsx
 import { NextLink } from "next-app-nprogress-navigation";
@@ -64,6 +64,7 @@ export default function HomePageLink() {
   return <NextLink href="/">Home Page</NextLink>;
 }
 ```
+### use `useNextRouter` from "next-app-nprogress-navigation" instead of `useRouter` from 'next/navigation'
 
 ```jsx
 "use client";
