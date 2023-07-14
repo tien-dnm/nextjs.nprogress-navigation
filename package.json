@@ -22,5 +22,20 @@
   },
   "dependencies": {
     "nprogress": "^0.2.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tien-dnm/next-app-nprogress-navigation.git"
+  },
+  "keywords": [
+    "nprogress",
+    "nextjs",
+    "appdir",
+    "next13",
+    "navigation"
+  ],
+  "bugs": {
+    "url": "https://github.com/tien-dnm/next-app-nprogress-navigation/issues"
+  },
+  "homepage": "https://github.com/tien-dnm/next-app-nprogress-navigation#readme"
 }
