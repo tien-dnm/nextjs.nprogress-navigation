@@ -76,7 +76,7 @@ export default function FooBarLink() {
       onClick={() => {
         router.push("/foo/bar");
       }}>
-      Home To Foo Bar
+      Go To Foo Bar
     </button>
   );
 }
