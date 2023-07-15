@@ -17,6 +17,11 @@ function useNextRouter() {
         }
         router.push(href, options);
     };
-    return Object.assign(Object.assign({}, router), { push });
+    const back = () => {
+        nprogress_1.default.start();
+        router.back();
+    };
+    return Object.assign(Object.assign({}, router), { push,
+        back });
 }
 exports.default = useNextRouter;
