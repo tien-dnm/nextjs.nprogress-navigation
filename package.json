@@ -1,6 +1,6 @@
 {
   "name": "next-app-nprogress-navigation",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "custom next/link and next/navigation, working with Nprogress and NextJS 13 App dir",
   "main": "src/index.js",
   "scripts": {
