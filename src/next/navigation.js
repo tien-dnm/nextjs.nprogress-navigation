@@ -10,8 +10,8 @@ function useNextRouter() {
     const router = (0, navigation_1.useRouter)();
     const pathName = (0, navigation_1.usePathname)();
     const searchParams = (0, navigation_1.useSearchParams)();
+    const currentUrl = (pathName || "") + (searchParams ? `?${searchParams.toString()}` : "");
     const push = (href, options) => {
-        const currentUrl = (pathName || "") + (searchParams ? `?${searchParams.toString()}` : "");
         if (href !== currentUrl) {
             nprogress_1.default.start();
         }
@@ -21,7 +21,19 @@ function useNextRouter() {
         nprogress_1.default.start();
         router.back();
     };
+    const replace = (href, options) => {
+        if (href !== currentUrl) {
+            nprogress_1.default.start();
+        }
+        router.replace(href, options);
+    };
+    const forward = () => {
+        nprogress_1.default.start();
+        router.forward();
+    };
     return Object.assign(Object.assign({}, router), { push,
-        back });
+        back,
+        replace,
+        forward });
 }
 exports.default = useNextRouter;

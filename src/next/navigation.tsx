@@ -9,12 +9,12 @@ export default function useNextRouter(): AppRouterInstance {
   const router = useRouter();
   const pathName = usePathname();
   const searchParams = useSearchParams();
+  const currentUrl =
+    (pathName || "") + (searchParams ? `?${searchParams.toString()}` : "");
   const push: AppRouterInstance["push"] = (
     href: string,
     options?: NavigateOptions | undefined
   ) => {
-    const currentUrl =
-      (pathName || "") + (searchParams ? `?${searchParams.toString()}` : "");
     if (href !== currentUrl) {
       NProgress.start();
     }
@@ -24,9 +24,24 @@ export default function useNextRouter(): AppRouterInstance {
     NProgress.start();
     router.back();
   };
+  const replace: AppRouterInstance["replace"] = (
+    href: string,
+    options?: NavigateOptions | undefined
+  ) => {
+    if (href !== currentUrl) {
+      NProgress.start();
+    }
+    router.replace(href, options);
+  };
+  const forward: AppRouterInstance["forward"] = () => {
+    NProgress.start();
+    router.forward();
+  };
   return {
     ...router,
     push,
     back,
+    replace,
+    forward,
   };
 }
