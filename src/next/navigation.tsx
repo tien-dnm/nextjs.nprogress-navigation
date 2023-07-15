@@ -20,8 +20,13 @@ export default function useNextRouter(): AppRouterInstance {
     }
     router.push(href, options);
   };
+  const back: AppRouterInstance["back"] = () => {
+    NProgress.start();
+    router.back();
+  };
   return {
     ...router,
     push,
+    back,
   };
 }
