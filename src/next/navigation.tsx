@@ -15,7 +15,7 @@ export default function useNextRouter(): AppRouterInstance {
     href: string,
     options?: NavigateOptions | undefined
   ) => {
-    if (href !== currentUrl) {
+    if (href !== currentUrl && !href.startsWith("#")) {
       NProgress.start();
     }
     router.push(href, options);
