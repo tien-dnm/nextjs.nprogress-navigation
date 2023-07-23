@@ -12,7 +12,7 @@ function useNextRouter() {
     const searchParams = (0, navigation_1.useSearchParams)();
     const currentUrl = (pathName || "") + (searchParams ? `?${searchParams.toString()}` : "");
     const push = (href, options) => {
-        if (href !== currentUrl) {
+        if (href !== currentUrl && !href.startsWith("#")) {
             nprogress_1.default.start();
         }
         router.push(href, options);
@@ -22,7 +22,7 @@ function useNextRouter() {
         router.back();
     };
     const replace = (href, options) => {
-        if (href !== currentUrl) {
+        if (href !== currentUrl && !href.startsWith("#")) {
             nprogress_1.default.start();
         }
         router.replace(href, options);
