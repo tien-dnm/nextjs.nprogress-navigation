@@ -19,8 +19,8 @@ const react_1 = __importDefault(require("react"));
 const link_1 = __importDefault(require("next/link"));
 const navigation_1 = require("next/navigation");
 const nprogress_1 = __importDefault(require("nprogress"));
-const resolve_href_1 = require("next/dist/shared/lib/router/utils/resolve-href");
 const router_1 = __importDefault(require("next/router"));
+const resolve_href_1 = require("next/dist/client/resolve-href");
 function NextLink(_a) {
     var { scroll, href } = _a, props = __rest(_a, ["scroll", "href"]);
     let stringHref = "";
