@@ -1,8 +1,9 @@
 "use client";
+
 import {
   AppRouterInstance,
   NavigateOptions,
-} from "next/dist/shared/lib/app-router-context";
+} from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import NProgress from "nprogress";
 export default function useNextRouter(): AppRouterInstance {

@@ -4,8 +4,8 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import NProgress from "nprogress";
 import { ComponentProps } from "react";
-import { resolveHref } from "next/dist/shared/lib/router/utils/resolve-href";
 import Router from "next/router";
+import { resolveHref } from "next/dist/client/resolve-href";
 export default function NextLink({
   scroll,
   href,
